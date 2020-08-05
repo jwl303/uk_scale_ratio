@@ -59,8 +59,6 @@ t2.loc[t2.INDUSTRIES.notnull(), 'INDUSTRIES'] = ind_list
 ttt = t2[(t2['GROWTH STAGE'].notnull()) & (t2.INDUSTRIES.notnull())].groupby(['INDUSTRIES', 'GROWTH STAGE'])['GROWTH STAGE'].count().to_frame()
 top_ind = t2[(t2['GROWTH STAGE'].notnull()) & (t2.INDUSTRIES.notnull())]['INDUSTRIES'].value_counts().index.tolist()
 
-
-
 fig,ax = plt.subplots(5,5, figsize = (40,40))
 counter = 0
 for i1 in range(5):
